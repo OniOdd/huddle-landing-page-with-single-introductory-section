@@ -1,0 +1,29 @@
+:root {
+  --font-color: #fff;
+  --bg-color: #674baf;
+  --active-state: #e882e8;
+  --font-headings: "Poppins", sans-serif;
+  --font-body: "Open Sans", sans-serif;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  line-height: 1.15;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  color: inherit;
+}
+
+body {
+  font: normal 400 1.6rem var(--font-body);
+  color: var(--font-color);
+}
