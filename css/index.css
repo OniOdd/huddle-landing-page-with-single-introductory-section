@@ -19,12 +19,104 @@ html {
   margin: 0;
   padding: 0;
   border: 0;
+  outline: 0;
   font: inherit;
   color: inherit;
 }
 
 body {
-  font: normal 400 1.6rem var(--font-body);
+  display: grid;
+  grid-template-areas: "header" "main" "footer";
+  grid-template-rows: repeat(3, min-content);
+  grid-template-columns: auto;
+  row-gap: 5rem;
+  min-block-size: 100vh;
+  inline-size: min(100% - 8rem, 144rem);
+  margin-inline: auto;
+  padding-block: 4rem;
+  font: normal 400 1.58rem var(--font-body);
   color: var(--main-color);
   background-color: var(--bg-color);
+  background-image: url("../images/bg-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.header { grid-area: header; }
+.header__logo {
+  inline-size: 13rem;
+  transform: translateX(-3%);
+}
+
+.main { grid-area: main; }
+
+.community__img {
+  inline-size: 100%;
+  margin-block-end: 7rem;
+}
+.community__container { text-align: center; }
+.community__title,
+.community__button { font-family: var(--font-headings); }
+.community__title {
+  margin-block-end: 1.5rem;
+  font-size: 2.6rem;
+  font-weight: 600;
+}
+.community__text {
+  margin-block-end: 2.5rem;
+  line-height: 1.7;
+}
+.community__button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  inline-size: 21rem;
+  block-size: 4.5rem;
+  font-size: 1.3rem;
+  color: var(--bg-color);
+  text-decoration: none;
+  background-color: var(--main-color);
+  border-radius: 3rem;
+  box-shadow: 0 .6rem 1rem 0 #00000034;
+  transition: all 140ms;
+}
+.community__button:hover,
+.community__button:focus {
+  color: var(--main-color);
+  background-color: var(--active-state);
+}
+
+.footer {
+  grid-area: footer;
+  text-align: center;
+}
+.footer__links {
+  margin-block-end: 1.8rem;
+  font-size: 1.6rem;
+}
+.footer__link {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  inline-size: 3rem;
+  block-size: 3rem;
+  fill: var(--main-color);
+  border: .1rem solid var(--main-color);
+  border-radius: 50%;
+  transition: all 140ms;
+}
+.footer__link:not(:last-child) { margin-inline-end: 1rem; }
+.footer__link:hover,
+.footer__link:focus {
+  fill: var(--active-state);
+  border: .1rem solid var(--active-state);
+}
+
+.attribution { font-size: 1rem; }
+.attribution__link { transition: all 140ms; }
+.attribution__link:hover { color: var(--active-state); }
+.attribution__link:focus {
+  padding: .2rem;
+  border: .1rem solid var(--active-state);
+  border-radius: .5rem;
 }
