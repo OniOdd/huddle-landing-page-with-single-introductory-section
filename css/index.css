@@ -30,6 +30,7 @@ body {
   grid-template-areas: "header" "main" "footer";
   grid-template-rows: repeat(3, auto);
   grid-template-columns: auto;
+  row-gap: 5rem;
   min-block-size: 100vh;
   max-inline-size: 144rem;
   margin-inline: auto;
@@ -42,9 +43,6 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
 }
-
-.header,
-.main { margin-block-end: 5rem; }
 
 .header { grid-area: header; }
 .header__logo {
@@ -135,6 +133,7 @@ body {
 
 @media (min-width: 48em) {
   body {
+    row-gap: 0;
     padding-block: 6.7rem 3rem;
     font-size: 1.6rem;
     background-image: url("../images/bg-desktop.svg");
@@ -144,7 +143,6 @@ body {
 
   .header {
     align-self: start;
-    margin-block-end: 10rem;
   }
 
   .main { align-self: center; }
